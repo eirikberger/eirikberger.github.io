@@ -1,23 +1,17 @@
 ---
-title: "My homepage"
 ---
 
-## R Markdown
+<br/>
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+<img src="eirik_pic.jpg" style="width:40%; border:0px solid; margin-right: 10px" align="left">
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+I am currently a second year PhD student at [FAIR CELE](https://www.nhh.no/en/research-centres/fair), which is part of the [Department of Economics](https://www.nhh.no/en/departments/economics) at the [Norwegian School of Economics](https://www.nhh.no/en) in Bergen. I hold a M.Sc from [The Norwegian School of Economics](https://www.nhh.no/en/), where I graduated in 2018.
 
-```{r cars}
-summary(cars)
-```
+My main interest lies in applied microeconomics with a special focus on labour and economic history. My main supervisor is [professor Kjell Gunnar Salvanes](https://sites.google.com/view/kjellsalvanes/home). 
 
-## Including Plots
+<br/>
 
-You can also embed plots, for example:
+**Email:** eirik[dot]berger[at]nhh.no  
+**Twitter:** [\@eirikberger](https://twitter.com/eirikberger)  
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+This website is under construction, and will be updated soon.
