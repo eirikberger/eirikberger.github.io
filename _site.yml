@@ -1,5 +1,5 @@
 name: "my-website"
-google_analytics: UA-151744165-1
+google_analytics: "UA-151744165-1"
 navbar:
   title: "Eirik Berger"
   left:
