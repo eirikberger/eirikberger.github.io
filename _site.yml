@@ -1,4 +1,5 @@
 name: "my-website"
+google_analytics: UA-151744165-1
 navbar:
   title: "Eirik Berger"
   left:
@@ -15,3 +16,6 @@ output:
     html_document:
       theme: cosmo
       highlight: tango
+
+     
+
