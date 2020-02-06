@@ -165,6 +165,9 @@ list faminc cigtax cigprice in 1/10, noobs </code></pre>
 <p>However, we can do this without any manual copy-and-past work. Using the “return list” command after running the “count” command, we find that it returns the scalar “r(N)”.</p>
 <pre class="stata"><code>count if white==1</code></pre>
 <pre><code>  1,089</code></pre>
+<pre class="stata"><code>return list</code></pre>
+<pre><code>scalars:
+                  r(N) =  1089</code></pre>
 <p>Similarly for the “sum” command:</p>
 <pre class="stata"><code>sum cigs</code></pre>
 <pre><code>    Variable |        Obs        Mean    Std. Dev.       Min        Max
@@ -180,11 +183,11 @@ list faminc cigtax cigprice in 1/10, noobs </code></pre>
                 r(min) =  0
                 r(max) =  50
                 r(sum) =  2897</code></pre>
-<p>We use the “local” command to save the number as “white”. You can check the content of “white” by using the display command.</p>
-<pre class="stata"><code>local white = r(N)
-display &quot;`white'&quot;</code></pre>
-<pre><code>1388</code></pre>
-<p>Put it all together and we get:</p>
+<p>We use the “local” command to save the mean (r(mean)) as “groupmean”. You can check the content of “groupmean” by using the display command.</p>
+<pre class="stata"><code>local groupmean = r(mean)
+display &quot;`groupmean'&quot;</code></pre>
+<pre><code>2.087175792507205</code></pre>
+<p>Put it all together and we can estimate the share of smokers among white mother in one go:</p>
 <pre class="stata"><code>count if white==1
 local white = r(N)
 display &quot;Saved number is: &quot; `white'
