@@ -44,10 +44,6 @@
 
 <div id="TOC" class="toc">
 <ul>
-<li><a href="#from-last-lecture">From last lecture</a><ul>
-<li><a href="#t-test">1. T-test</a></li>
-<li><a href="#f-test">2. F-test</a></li>
-</ul></li>
 <li><a href="#how-to-use-stata-efficiently">How to use Stata efficiently</a><ul>
 <li><a href="#how-to-start-your-dofile">1. How to start your dofile</a></li>
 <li><a href="#load-and-check-your-data">2. Load and check your data</a></li>
@@ -57,6 +53,10 @@
 <li><a href="#logs">6. Logs</a></li>
 <li><a href="#use-google-and-the-help-command">7. Use Google and the “help” command</a></li>
 </ul></li>
+<li><a href="#from-last-lecture">From last lecture</a><ul>
+<li><a href="#t-test">1. T-test</a></li>
+<li><a href="#f-test">2. F-test</a></li>
+</ul></li>
 <li><a href="#assignment-1">Assignment 1</a><ul>
 <li><a href="#produce-and-export-regression-results">1. Produce and export regression results</a></li>
 <li><a href="#produce-and-export-figures">2. Produce and export figures</a></li>
@@ -65,56 +65,6 @@
 </div>
 
 <section class="main-content">
-<div id="from-last-lecture" class="section level1">
-<h1>From last lecture</h1>
-<p>Vincent asked me to go through how you run a f-test i Stata. I think this is a good oppertunity to learn how to figure out these kind of questions by yourself.</p>
-<div id="t-test" class="section level2">
-<h2>1. T-test</h2>
-<p>If you search for “t-test” on google you will find this page quite soon (the stata help manual for the command “ttest”): <a href="https://www.stata.com/manuals13/rttest.pdf" class="uri">https://www.stata.com/manuals13/rttest.pdf</a>. It gives you all the information you need about the syntax of the command + good examples of how to use the command.</p>
-</div>
-<div id="f-test" class="section level2">
-<h2>2. F-test</h2>
-<p>How should we learn to use the f-test? You guessed it: Just use the same trick as for the t-test and find this help page (the stata help manual for the command “test”): <a href="https://www.stata.com/manuals13/rtest.pdf" class="uri">https://www.stata.com/manuals13/rtest.pdf</a></p>
-<pre class="stata"><code>reg faminc cigtax cigprice bwght male white</code></pre>
-<pre><code>r(111);
-
-end of do-file
-r(111);</code></pre>
-<p>To use the f-test to test the joint null hypothesis that the coefficients on both “cigtax” and “cigprice” are equal to zero we use the “test” command. It’s really intuitive:</p>
-<pre class="stata"><code>test (cigtax = 0) (cigprice = 0)</code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-last estimates not found
-r(301);
-
-end of do-file
-r(301);</code></pre>
-<p>Or with even less code:</p>
-<pre class="stata"><code>test cigtax cigprice</code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-last estimates not found
-r(301);
-
-end of do-file
-r(301);</code></pre>
-<p>What about testing if they are equal to each other?</p>
-<pre class="stata"><code>test cigtax = cigprice</code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-last estimates not found
-r(301);
-
-end of do-file
-r(301);</code></pre>
-</div>
-</div>
 <div id="how-to-use-stata-efficiently" class="section level1">
 <h1>How to use Stata efficiently</h1>
 <div id="how-to-start-your-dofile" class="section level2">
@@ -181,97 +131,62 @@ cd &quot;$top&quot;
 <p>Always add “clear” as an option when you open a .dta file. Also, don’t include the full path: It is cleaner to either use globals (see below) or use the “cd” (change directory) command.</p>
 <pre class="stata"><code>use &quot;$data/BWGHT.DTA&quot;, clear
 list faminc cigtax cigprice in 1/10, noobs </code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-file /BWGHT.DTA not found
-r(601);
-
-end of do-file
-r(601);</code></pre>
+<pre><code>  | faminc   cigtax   cigprice |
+  |----------------------------|
+  |   13.5     16.5      122.3 |
+  |    7.5     16.5      122.3 |
+  |     .5     16.5      122.3 |
+  |   15.5     16.5      122.3 |
+  |   27.5     16.5      122.3 |
+  |----------------------------|
+  |    7.5     16.5      122.3 |
+  |     65     16.5      122.3 |
+  |   27.5     16.5      122.3 |
+  |   27.5     16.5      122.3 |
+  |   37.5     16.5      122.3 |
+  +----------------------------+</code></pre>
 <pre class="stata"><code>sum faminc</code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-no variables defined
-r(111);
-
-end of do-file
-r(111);</code></pre>
+<pre><code>    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+      faminc |      1,388    29.02666    18.73928         .5         65</code></pre>
 <p>Or simply use the “browse” command (“br” for short) to look at your dataset directly.</p>
 </div>
 <div id="how-to-re-use-results-using-locals" class="section level2">
 <h2>3. How to re-use results (using locals)</h2>
 <p>Sometimes we want to save certain numbers coming from Stata commands for later use. Example: What is the share of white mothers who smoke? First, we find the number of white mothers.</p>
 <pre class="stata"><code>count if white==1</code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-white not found
-r(111);
-
-end of do-file
-r(111);</code></pre>
+<pre><code>  1,089</code></pre>
 <p>Then the number of white mothers who smoke.</p>
 <pre class="stata"><code>count if white==1 &amp; cigs&gt;0</code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-white not found
-r(111);
-
-end of do-file
-r(111);</code></pre>
+<pre><code>  165</code></pre>
 <p>I copy the answers from the above commands and calculate the answer using the “display” command. Note that the display command functions as a calculator when you don’t use “”.</p>
 <pre class="stata"><code>display 165/1089</code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-.15151515</code></pre>
+<pre><code>.15151515</code></pre>
 <p>However, we can do this without any manual copy-and-past work. Using the “return list” command after running the “count” command, we find that the count command returns (saves) the scalar “r(N)”.</p>
 <pre class="stata"><code>count if white==1</code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-white not found
-r(111);
-
-end of do-file
-r(111);</code></pre>
+<pre><code>  1,089</code></pre>
 <pre class="stata"><code>return list</code></pre>
-<pre><code> no variables defined
-r(111);
-</code></pre>
+<pre><code>scalars:
+                  r(N) =  1089</code></pre>
 <p>Similarly for the “sum” command:</p>
 <pre class="stata"><code>sum cigs</code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-no variables defined
-r(111);
-
-end of do-file
-r(111);</code></pre>
+<pre><code>    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+        cigs |      1,388    2.087176    5.972688          0         50</code></pre>
 <pre class="stata"><code>return list</code></pre>
-<pre><code> no variables defined
-r(111);
-</code></pre>
+<pre><code>scalars:
+                  r(N) =  1388
+              r(sum_w) =  1388
+               r(mean) =  2.087175792507205
+                r(Var) =  35.67300052567169
+                 r(sd) =  5.972687881152981
+                r(min) =  0
+                r(max) =  50
+                r(sum) =  2897</code></pre>
 <p>We use the “local” command to save the mean (r(mean)) as “groupmean”. You can check the content of “groupmean” by using the display command.</p>
 <pre class="stata"><code>local groupmean = r(mean)
 display &quot;`groupmean'&quot;</code></pre>
-<pre><code> no variables defined
-r(111);
-
-
-
-.</code></pre>
+<pre><code>2.087175792507205</code></pre>
 <p>Put it all together and we can estimate the share of smokers among white mother in one go:</p>
 <pre class="stata"><code>count if white==1
 local white = r(N)
@@ -281,15 +196,19 @@ local whiteandsmoke = r(N)
 display &quot;Saved number is :&quot;`whiteandsmoke'
 display &quot;The fraction of white people that smoke is: &quot; `whiteandsmoke'/`white'
 display &quot;or in percent &quot; 100*(`whiteandsmoke'/`white') &quot;%&quot;</code></pre>
-<pre><code> no variables defined
-r(111);
+<pre><code>  1,089
 
 
-white not found
-r(111);
+Saved number is: 1089
 
-end of do-file
-r(111);</code></pre>
+  165
+
+
+Saved number is :165
+
+The fraction of white people that smoke is: .15151515
+
+or in percent 15.151515%</code></pre>
 </div>
 <div id="using-global-to-deal-with-folder-structures" class="section level2">
 <h2>4. Using global to deal with folder structures</h2>
@@ -323,6 +242,56 @@ exit         // Useful closing commands</code></pre>
 <p>Just do it. Ask for help if you can’t find it there.</p>
 </div>
 </div>
+<div id="from-last-lecture" class="section level1">
+<h1>From last lecture</h1>
+<p>Vincent asked me to go through how you run a f-test i Stata. I think this is a good oppertunity to learn how to figure out these kind of questions by yourself.</p>
+<div id="t-test" class="section level2">
+<h2>1. T-test</h2>
+<p>If you search for “t-test” on google you will find this page quite soon (the stata help manual for the command “ttest”): <a href="https://www.stata.com/manuals13/rttest.pdf" class="uri">https://www.stata.com/manuals13/rttest.pdf</a>. It gives you all the information you need about the syntax of the command + good examples of how to use the command.</p>
+</div>
+<div id="f-test" class="section level2">
+<h2>2. F-test</h2>
+<p>How should we learn to use the f-test? You guessed it: Just use the same trick as for the t-test and find this help page (the stata help manual for the command “test”): <a href="https://www.stata.com/manuals13/rtest.pdf" class="uri">https://www.stata.com/manuals13/rtest.pdf</a></p>
+<pre class="stata"><code>reg faminc cigtax cigprice bwght male white</code></pre>
+<pre><code>      Source |       SS           df       MS      Number of obs   =     1,388
+-------------+----------------------------------   F(5, 1382)      =     40.07
+       Model |  61667.9131         5  12333.5826   Prob &gt; F        =    0.0000
+    Residual |  425392.101     1,382  307.809045   R-squared       =    0.1266
+-------------+----------------------------------   Adj R-squared   =    0.1235
+       Total |  487060.014     1,387  351.160789   Root MSE        =    17.544
+
+------------------------------------------------------------------------------
+      faminc |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      cigtax |  -.7546118   .1254443    -6.02   0.000    -1.000694     -.50853
+    cigprice |   .6144594   .0953262     6.45   0.000     .4274597    .8014591
+       bwght |   .0674765   .0234134     2.88   0.004     .0215469     .113406
+        male |  -1.750652   .9463898    -1.85   0.065    -3.607168    .1058639
+       white |   13.45813   1.163566    11.57   0.000     11.17558    15.74067
+       _cons |   -54.0982   10.69192    -5.06   0.000    -75.07234   -33.12405
+------------------------------------------------------------------------------</code></pre>
+<p>To use the f-test to test the joint null hypothesis that the coefficients on both “cigtax” and “cigprice” are equal to zero we use the “test” command. It’s really intuitive:</p>
+<pre class="stata"><code>test (cigtax = 0) (cigprice = 0)</code></pre>
+<pre><code> ( 1)  cigtax = 0
+ ( 2)  cigprice = 0
+
+       F(  2,  1382) =   21.08
+            Prob &gt; F =    0.0000</code></pre>
+<p>Or with even less code:</p>
+<pre class="stata"><code>test cigtax cigprice</code></pre>
+<pre><code> ( 1)  cigtax = 0
+ ( 2)  cigprice = 0
+
+       F(  2,  1382) =   21.08
+            Prob &gt; F =    0.0000</code></pre>
+<p>What about testing if they are equal to each other?</p>
+<pre class="stata"><code>test cigtax = cigprice</code></pre>
+<pre><code> ( 1)  cigtax - cigprice = 0
+
+       F(  1,  1382) =   40.99
+            Prob &gt; F =    0.0000</code></pre>
+</div>
+</div>
 <div id="assignment-1" class="section level1">
 <h1>Assignment 1</h1>
 <p>You should always attempt to fully automate the production of your output, as this will save you a lot of time if you have to do lots of revisions. Note: With LaTex (Word for academia) you can go even further in making your workflow efficient. You might be okay with less efficiency in this course, but it could save you days of work when writing an empirical master og PhD thesis.</p>
@@ -334,37 +303,55 @@ ssc install estout</code></pre>
 <p>Run 2 regression and save the estimated coefficients.</p>
 <pre class="stata"><code>reg bwght cigs
 estimates store reg1</code></pre>
-<pre><code> no variables defined
-r(111);
+<pre><code>      Source |       SS           df       MS      Number of obs   =     1,388
+-------------+----------------------------------   F(1, 1386)      =     32.24
+       Model |  13060.4194         1  13060.4194   Prob &gt; F        =    0.0000
+    Residual |    561551.3     1,386  405.159668   R-squared       =    0.0227
+-------------+----------------------------------   Adj R-squared   =    0.0220
+       Total |   574611.72     1,387  414.283864   Root MSE        =    20.129
 
-
-no variables defined
-r(111);
-
-end of do-file
-r(111);</code></pre>
+------------------------------------------------------------------------------
+       bwght |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        cigs |  -.5137721   .0904909    -5.68   0.000    -.6912861   -.3362581
+       _cons |   119.7719   .5723407   209.27   0.000     118.6492    120.8946
+------------------------------------------------------------------------------</code></pre>
 <pre class="stata"><code>reg bwght cigs white
 estimates store reg2</code></pre>
-<pre><code> no variables defined
-r(111);
+<pre><code>      Source |       SS           df       MS      Number of obs   =     1,388
+-------------+----------------------------------   F(2, 1385)      =     27.47
+       Model |  21925.2578         2  10962.6289   Prob &gt; F        =    0.0000
+    Residual |  552686.462     1,385  399.051597   R-squared       =    0.0382
+-------------+----------------------------------   Adj R-squared   =    0.0368
+       Total |   574611.72     1,387  414.283864   Root MSE        =    19.976
 
-
-no variables defined
-r(111);
-
-end of do-file
-r(111);</code></pre>
+------------------------------------------------------------------------------
+       bwght |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        cigs |  -.5059517   .0898216    -5.63   0.000    -.6821527   -.3297507
+       white |   6.148295   1.304469     4.71   0.000     3.589346    8.707244
+       _cons |   114.9317   1.173547    97.94   0.000     112.6296    117.2339
+------------------------------------------------------------------------------</code></pre>
 <p>Make table with results from reg1 and reg2. Lots of oppertunities to make the regression table nicer!</p>
 <pre class="stata"><code>esttab reg1 reg2, title(&quot;Joint regression table:&quot;)</code></pre>
-<pre><code> no variables defined
-r(111);
+<pre><code>Joint regression table:
+--------------------------------------------
+                      (1)             (2)   
+                    bwght           bwght   
+--------------------------------------------
+cigs               -0.514***       -0.506***
+                  (-5.68)         (-5.63)   
 
+white                               6.148***
+                                   (4.71)   
 
-estimation result reg1 not found
-r(111);
-
-end of do-file
-r(111);</code></pre>
+_cons               119.8***        114.9***
+                 (209.27)         (97.94)   
+--------------------------------------------
+N                    1388            1388   
+--------------------------------------------
+t statistics in parentheses
+* p&lt;0.05, ** p&lt;0.01, *** p&lt;0.001</code></pre>
 <p>Make the same table and save it in the file called regtable1. This file can later be used in a word document. Note: You can also export to .tex format using the same command.</p>
 <p>Use “help esttab” or google if you want to customize your regression results.</p>
 </div>
