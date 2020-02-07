@@ -69,17 +69,16 @@
 <h1>How to use Stata efficiently</h1>
 <div id="how-to-start-your-dofile" class="section level2">
 <h2>1. How to start your dofile</h2>
-<p>Always begin you dofile in the same way (just copy and past from old dofiles): 1) some basic information, 2) packages nessecary to run the code, 3) preliminary settings and 4) import the file structure. Example:</p>
+<p>Always begin you dofile in the same way (just copy and paste from old dofiles): 1) some basic information, 2) packages necessary to run the code, 3) preliminary settings, and 4) import the file structure. Example:</p>
 <pre class="stata"><code>
 /*******************************************************************************
 ********************************************************************************
 
-                    Lab 1 for Econometrics class
+                     Lab 1 for Econometrics class
 
-
-                        Written by Eirik Berger
-                          PhD Research Scholar
-                 The Norwegian School of Economics (NHH)
+                         Written by Eirik Berger
+                           PhD Research Scholar
+                  The Norwegian School of Economics (NHH)
 
 ********************************************************************************    
 *******************************************************************************/
@@ -162,7 +161,7 @@ list faminc cigtax cigprice in 1/10, noobs </code></pre>
 <p>I copy the answers from the above commands and calculate the answer using the “display” command. Note that the display command functions as a calculator when you don’t use “”.</p>
 <pre class="stata"><code>display 165/1089</code></pre>
 <pre><code>.15151515</code></pre>
-<p>However, we can do this without any manual copy-and-past work. Using the “return list” command after running the “count” command, we find that the count command returns (saves) the scalar “r(N)”.</p>
+<p>However, we can do this without any manual copy-and-paste work. Using the “return list” command after running the “count” command, we find that the count command returns (saves) the scalar “r(N)”.</p>
 <pre class="stata"><code>count if white==1</code></pre>
 <pre><code>  1,089</code></pre>
 <pre class="stata"><code>return list</code></pre>
@@ -212,7 +211,7 @@ or in percent 15.151515%</code></pre>
 </div>
 <div id="using-global-to-deal-with-folder-structures" class="section level2">
 <h2>4. Using global to deal with folder structures</h2>
-<p>Globals are a great way of keeping your dofile clear and the file structure organized. With globals you save a string (text) to a name, like in the begining of my dofile. Use $[name] to retrive it. In the following example, I save the path to my working directory and then change the directory:</p>
+<p>Globals are a great way of keeping your dofile clear and the file structure organized. With globals you save a string (text) to a name, like at the beginning of my dofile. Use $[name] to retrieve it. In the following example, I save the path to my working directory and then change the directory:</p>
 <pre class="stata"><code>global wd &quot;/Users/eirikberger/Dropbox/0_AKADEMISK/department_work/ECN402_spring_2020/lab0&quot;
 cd &quot;$wd&quot;</code></pre>
 <p>Similarly, to open a dataset in the data folder (already saved as a global), you write:</p>
@@ -220,21 +219,21 @@ cd &quot;$wd&quot;</code></pre>
 </div>
 <div id="comment-a-lot" class="section level2">
 <h2>5. Comment a lot!</h2>
-<p>Use “*&quot; to write comments in your dofile. This symobol can also be used to “turn of” a command by placing “*&quot; in front of the command to save it for later. Use “//” if you want to comment on the same line as a command (see example below). You can also create a full section with text only (sections that is not interpreted as code), by writing “/*&quot; to start the section and “*/&quot; to end it (see point nr. 1 for an example).</p>
-<p>It’s difficult to interperet code for future you or co-authors. Note: You have to hand in your dofile for assignments (as an appendix in your main pdf file). The dofile should 1) reproduce your results, 2) it should be clear what you have done (use comments) and 3) it should look tidy and nice.</p>
+<p>Use “*&quot; to write comments in your dofile. This symbol can also be used to “turn off” a command by placing “*&quot; in front of the command to save it for later. Use “//” if you want to comment on the same line as a command (see example below). You can also create a full section with text only (parts that are not interpreted as code), by writing “/*&quot; to start the section and “*/&quot; to end it (see point no. 1 for an example).</p>
+<p>It’s challenging to interpret code for future you or co-authors. Note: You have to hand in your dofile for assignments (as an appendix in your main pdf file). The dofile should 1) reproduce your results, 2) it should be clear what you have done (use comments) and 3) it should look tidy and nice.</p>
 </div>
 <div id="logs" class="section level2">
 <h2>6. Logs</h2>
 <p>You have to hand in the log from running your full dofile (as an appendix in your main pdf file). It might be easiest to add the commands below when you create your dofile, but to make them inactive (use “*&quot; in front of them) until you are done and run the full dofile in one go.</p>
 <pre class="stata"><code>capture log close           // Could add this to your preliminaries. Closes the log file given that a log files is recording
 log using introlab, text replace            // Opens a log and saves it as a text file.
-capture log close          // close and saves the log file given that a log files is recording
+capture log close          // close and saves the log file given that a log file is recording
 exit         // Useful closing commands</code></pre>
-<p>Note that you might find the “capture” command usefull at some point, especially when your dofile have to be able to deal with several different datasets. It executes the command following it (same line) given that there are no errors. If there are any errors in the following command, it stops the process and contunues with the next line. Examples where this might be useful is to drop a certain variable given that it exist. For example if you might have a bwght variable and an income variable, but its not certain:</p>
+<p>Note that you might find the “capture” command useful at some point, especially when your dofile has to be able to deal with several different datasets. It executes the command following it (same line), given that there are no errors. If there are any errors in the following command, it stops the process and continues with the next line. Examples, where this might be useful, is to drop a certain variable given that it exists. For example, if you might have a bwght variable and an income variable, but it is not certain:</p>
 <pre class="stata"><code>drop bwght</code></pre>
 <p>This command works because there is indeed a variable named bwght. What about income:</p>
 <pre class="stata"><code>drop income</code></pre>
-<p>We get an error because there is no such variable. To run the code without an error, we run:</p>
+<p>We get an error because there is no such variable. To run the code without any error, we run:</p>
 <pre class="stata"><code>capture drop income</code></pre>
 </div>
 <div id="use-google-and-the-help-command" class="section level2">
@@ -244,10 +243,10 @@ exit         // Useful closing commands</code></pre>
 </div>
 <div id="from-last-lecture" class="section level1">
 <h1>From last lecture</h1>
-<p>Vincent asked me to go through how you run a f-test i Stata. I think this is a good oppertunity to learn how to figure out these kind of questions by yourself.</p>
+<p>Vincent asked me to go through how you run an f-test in Stata. I think this is an excellent opportunity to learn how to figure out these kinds of questions by yourself.</p>
 <div id="t-test" class="section level2">
 <h2>1. T-test</h2>
-<p>If you search for “t-test” on google you will find this page quite soon (the stata help manual for the command “ttest”): <a href="https://www.stata.com/manuals13/rttest.pdf" class="uri">https://www.stata.com/manuals13/rttest.pdf</a>. It gives you all the information you need about the syntax of the command + good examples of how to use the command.</p>
+<p>If you search for “t-test” on google, you will find this page quite soon (the stata help manual for the command “ttest”): <a href="https://www.stata.com/manuals13/rttest.pdf" class="uri">https://www.stata.com/manuals13/rttest.pdf</a>. It gives you all the information you need about the syntax of the command + good examples of how to use the command.</p>
 </div>
 <div id="f-test" class="section level2">
 <h2>2. F-test</h2>
@@ -270,7 +269,7 @@ exit         // Useful closing commands</code></pre>
        white |   13.45813   1.163566    11.57   0.000     11.17558    15.74067
        _cons |   -54.0982   10.69192    -5.06   0.000    -75.07234   -33.12405
 ------------------------------------------------------------------------------</code></pre>
-<p>To use the f-test to test the joint null hypothesis that the coefficients on both “cigtax” and “cigprice” are equal to zero we use the “test” command. It’s really intuitive:</p>
+<p>To use the f-test to test the joint null hypothesis that the coefficients on both “cigtax” and “cigprice” are equal to zero, we use the “test” command. It’s really intuitive:</p>
 <pre class="stata"><code>test (cigtax = 0) (cigprice = 0)</code></pre>
 <pre><code> ( 1)  cigtax = 0
  ( 2)  cigprice = 0
@@ -294,7 +293,7 @@ exit         // Useful closing commands</code></pre>
 </div>
 <div id="assignment-1" class="section level1">
 <h1>Assignment 1</h1>
-<p>You should always attempt to fully automate the production of your output, as this will save you a lot of time if you have to do lots of revisions. Note: With LaTex (Word for academia) you can go even further in making your workflow efficient. You might be okay with less efficiency in this course, but it could save you days of work when writing an empirical master og PhD thesis.</p>
+<p>You should always attempt to fully automate the production of your output, as this will save you a lot of time if you have to do lots of revisions. Note: With LaTex (Word for academia), you can go even further in making your workflow efficient. You might be okay with less efficiency in this course, but it could save you days of work when writing an empirical master and PhD thesis.</p>
 <div id="produce-and-export-regression-results" class="section level2">
 <h2>1. Produce and export regression results</h2>
 <p>Based on the hint dofile of assignment 1:</p>
@@ -332,7 +331,7 @@ estimates store reg2</code></pre>
        white |   6.148295   1.304469     4.71   0.000     3.589346    8.707244
        _cons |   114.9317   1.173547    97.94   0.000     112.6296    117.2339
 ------------------------------------------------------------------------------</code></pre>
-<p>Make table with results from reg1 and reg2. Lots of oppertunities to make the regression table nicer!</p>
+<p>Make a table with results from reg1 and reg2. Lots of opportunities to make the regression table nicer!</p>
 <pre class="stata"><code>esttab reg1 reg2, title(&quot;Joint regression table:&quot;)</code></pre>
 <pre><code>Joint regression table:
 --------------------------------------------
