@@ -52,6 +52,8 @@
 <li><a href="#comment-a-lot">5. Comment a lot!</a></li>
 <li><a href="#logs">6. Logs</a></li>
 <li><a href="#use-google-and-the-help-command">7. Use Google and the “help” command</a></li>
+<li><a href="#delimit">8. Delimit</a></li>
+<li><a href="#logical-statements">9. Logical statements</a></li>
 </ul></li>
 <li><a href="#from-last-lecture">From last lecture</a><ul>
 <li><a href="#t-test">1. T-test</a></li>
@@ -240,6 +242,31 @@ exit         // Useful closing commands</code></pre>
 <h2>7. Use Google and the “help” command</h2>
 <p>Just do it. Ask for help if you can’t find it there.</p>
 </div>
+<div id="delimit" class="section level2">
+<h2>8. Delimit</h2>
+<p>In cases where one command goes across several lines (for example when you are producing figures), you can use #delimit ; and #delimit cr. Example</p>
+<pre class="stata"><code>#delimit ;
+esttab lin_all lin_high using A1_tab1.tex, 
+  b(%4.2f) se(%4.2f) r2(%4.2f) scalars(Prediction) replace label star(* 0.10 ** 0.05 *** 0.01) 
+  mtitles(&quot;All countries&quot; &quot;High-income countries&quot;) 
+  title(&quot;Linear regression model: Outcome is labour productivity in agriculture&quot;);
+#delimit cr</code></pre>
+<p>Remember to add the “;” at the end of the last line in the command.</p>
+</div>
+<div id="logical-statements" class="section level2">
+<h2>9. Logical statements</h2>
+<p>Remember the logical statments:</p>
+<ul>
+<li>&amp; and</li>
+<li>| or</li>
+<li>!= not equal to</li>
+<li>== equal to</li>
+<li>&gt; larger than</li>
+<li>&lt; smaller than</li>
+<li>=&gt; larger or equal to</li>
+<li>=&lt; smaller than or equal to</li>
+</ul>
+</div>
 </div>
 <div id="from-last-lecture" class="section level1">
 <h1>From last lecture</h1>
@@ -352,7 +379,7 @@ N                    1388            1388
 t statistics in parentheses
 * p&lt;0.05, ** p&lt;0.01, *** p&lt;0.001</code></pre>
 <p>Make the same table and save it in the file called regtable1. This file can later be used in a word document. Note: You can also export to .tex format using the same command.</p>
-<p>Use “help esttab” or google if you want to customize your regression results.</p>
+<p>Use “help esttab” or google if you want to customize your regression results. For example, you can use “estadd scalar” to add a number to your table.</p>
 </div>
 <div id="produce-and-export-figures" class="section level2">
 <h2>2. Produce and export figures</h2>
