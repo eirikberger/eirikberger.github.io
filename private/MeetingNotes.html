@@ -1,0 +1,388 @@
+<!DOCTYPE html><html><head>
+      <title>MeetingNotes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/eirikberger/.atom/packages/markdown-preview-enhanced/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <div><h1 class="mume-header" id="project-summery-the-great-norwegian-leveler">Project Summery: 'The Great Norwegian Leveler'</h1>
+
+<p>First meeting Oct. 21, 2021.</p>
+<p><strong>Meeting plan:</strong></p>
+<ul>
+<li>Oct. 28, 2021</li>
+<li>Nov. 4, 2021</li>
+<li>Nov. 11, 2021</li>
+<li>Nov. 18, 2021</li>
+<li>Nov. 25, 2021</li>
+<li>Des. 2, 2021</li>
+<li>Des. 9, 2021</li>
+<li>Des. 16, 2021: <strong>Eirik in Norway</strong></li>
+</ul>
+<p><strong>Zoom information (same log in every week):</strong></p>
+<p>URL: <a href="https://nhh.zoom.us/j/62271490755?pwd=dG9LcVN3VHpqeFdxZkZZeVFNTHhGdz09">https://nhh.zoom.us/j/62271490755?pwd=dG9LcVN3VHpqeFdxZkZZeVFNTHhGdz09</a><br>
+Meeting ID: 622 7149 0755<br>
+Passcode: 346981</p>
+<hr>
+<h2 class="mume-header" id="thursday-oct-21-zoom">Thursday Oct. 21 (zoom)</h2>
+
+<p><strong>How we view the project currently:</strong></p>
+<p>Norwegian income inequality fell dramatically from the onset of the second world war, possibly coming from two main sources:</p>
+<ol>
+<li>direct effect of war related investments</li>
+<li>a general surge in prices of food and raw material benefitting low skilled workers.</li>
+</ol>
+<p><em>Comment by Eirik:</em> Somehow, direct 'destruction', produced by war and a complete stop in world trade, clearly shocked the incomes and wealth of the very rich down. This is the conventional story that Piketty use to explain the drop in top income shares. We also see this in our data.</p>
+<p><strong>We trace the decline in inequality to its sources, by by did it not bounce back up immediately?</strong></p>
+<ul>
+<li>Increase in levels and progresivity of income and wealth taxation.
+<ul>
+<li>Mentioned by Ran: Taxing the Rich: A History of Fiscal Fairness in the United States and Europe. Kenneth Scheve and David Stasavage <a href="https://press.princeton.edu/books/hardcover/9780691165455/taxing-the-rich">link</a>. See also figure 1 <a href="https://voxeu.org/article/inequality-total-war-great-leveller">here</a>.</li>
+<li>Nationalization of industry.</li>
+<li>Trade unions. See figure 2 <a href="https://voxeu.org/article/inequality-total-war-great-leveller">here</a>.</li>
+<li>'The regulation economy'.</li>
+<li>Welfare state? Schooling?</li>
+</ul>
+</li>
+</ul>
+<p><strong>What now?</strong></p>
+<p>Explain effect of investments on market prices in a common framwork. Use 1930 population census OR 1939 agricultural census to define more detailed variables. Setup similar to Bartik (is it Bartik). Note: Kjell and Marc has structured the agricultural census in nice format on lucia (our server). Will give Eirik access.</p>
+<p>Goal is that we work hard now to have somethign by winter. Eirik will present in Rans advising group and ask some graduate students to read through the draft before the presentation so that we get good and solid feedback.</p>
+<p>Goal should be to have a good draft before Eirik goes back to Norway and paternity leave (from beginning of April to the beginning of August).</p>
+<p><strong>Some relevant literature in English:</strong></p>
+<ul>
+<li>The book Kjell mentioned. This book is currently referenced in a footnote on page 17 in our note: Milward, A. S. (1972). The fascist economy in Norway. Oxford University Press.</li>
+<li>A good and short overview written quite recently: Espeli, H. (2013). Economic consequences of the german occupation of norway, 1940–1945. Scandinavian Journal of History, 38(4), 502–524.</li>
+<li>Ingulstad, M., Hatlehol, G. D., &amp; Frøland, H. O. (2017). Regimenting labour in norway during nazi germany’s occupation. Working paper.</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul>
+<li>In regards to Intergenerational mobility, <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/sjoe.12205">here</a> is the paper by Kjell, Pekkarinen and Sarvimäki on mobility in Norway.</li>
+<li>Also, <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/sjoe.12196">this</a> is the other work on this topic by Jørgen Modalsli.</li>
+</ul>
+<h3 class="mume-header" id="for-next-meeting-and-other-todos">For next meeting and other todo's</h3>
+
+<p><strong>Next meeting:</strong></p>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Eirk will prepare a presentation on what we have so far, and we will go through it slide by slide.</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Attempt to get a spesification up and running incorporating both the German investments and shock to prices.</li>
+</ul>
+<p><strong>Other todos:</strong></p>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Get tax books for Oslo OCR-ed. Did not decide on deadline, but I will push the  Upwork guy. Have been in conntact with Sebastian about funding.</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox">  Work on linking algorithm across years.</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox">  How to make sure of quality of data:
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox">  Compare with register dataset</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox">  Compare with 1930 census</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox">  Get someone to transcribe selected pages and compare with the fully computerized process.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="mume-header" id="thursday-oct-28">Thursday Oct. 28</h2>
+
+<p>Meeting based around the slides sent out by Eirik late the day before.</p>
+<p><strong>Discussion on our contribution:</strong></p>
+<ol>
+<li>Zooming in on the role of the second world war.
+<ul>
+<li>Focusing on the neaunces in the middle and bottom part of the income distribution.</li>
+<li>Using more detailed data than used previously (geography and occupations).</li>
+</ul>
+</li>
+<li>Showing that the decline was long lasting. Writing up a section on potential reasons that inequality didn't bounce back up in recent years to the same extent as in the US.</li>
+</ol>
+<p><em>Comment by Eirik:</em> It seems like the nordic countries and France have managed to keep inequality down to a reasonable level in recent years, while US Britain have not.</p>
+<p><strong>Other notes from the meeting:</strong></p>
+<ul>
+<li>While the main paper is about the period 1930 to 1965, we have a section on the long-run changes in income inequality and how it stayed low in Norway while not in the US.</li>
+<li>Low-skilled workers saw increasing wages during the industrial revolution, something you wouldn't have seen if you only looked at the top 1/10 percent. This is the same we see during WW2.</li>
+<li>Must look closer at ways of isolating the causal mechanisms. Grain compositions? Distance to port? Bartik instruments with aggregate price shocks?</li>
+</ul>
+<p><em>Comment by Eirik:</em> It seems like increase in wages is correlated with the number of German troopes in the area (they needed houses, food, etc.). Unfortuantly, we only have data on German troopes for 4-5 large regions.</p>
+<ul>
+<li>Book we should look closer at: Taxing the Rich: A History of Fiscal Fairness in the United States and Europe. <strong>Kenneth Scheve and David Stasavage</strong> <a href="https://press.princeton.edu/books/hardcover/9780691165455/taxing-the-rich">link</a></li>
+<li>Also look at Rans <a href="https://ranabr.people.stanford.edu/sites/g/files/sbiybj5391/f/aej_oct222021.pdf">paper</a> on the imigration quota for inspiration on instrument.</li>
+<li>Will look closer at possible sources of prices data.</li>
+<li>Can we get data on soil conditions?</li>
+</ul>
+<p><strong>Todo:</strong></p>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Where to get data on soil conditions (ask Kjell).</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Get prices data (in first stage, just to observe it).</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Send paper on mobility (QJE 2010 by Saez and coauthors).</li>
+</ul>
+<hr>
+<h2 class="mume-header" id="thursday-nov-4-scheduled">Thursday  Nov. 4 (scheduled)</h2>
+
+</div>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
