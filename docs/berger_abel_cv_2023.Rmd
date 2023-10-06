@@ -1,0 +1,87 @@
+---
+output: datadrivencv::cv
+geometry: margin=1in
+
+title: "CV"
+author: Eirik Berger Abel
+
+jobtitle: "PhD Research Scholar | Norwegian School of Economics"
+#address: "Helleveien 30, 5045 Bergen, Vestlandet, Norway"
+fontawesome: yes
+email: eirik.berger@gmail.com
+#github: eirikberger
+#twitter: eirikberger
+phone: "+47 954 61 029"
+#web: eirikberger.github.io
+updated: TRUE
+rdateformat: "`r format(Sys.time(), '%d %b %Y')`"
+
+keywords: R Markdown, academic CV, template
+
+fontfamily: mathpazo
+fontfamilyoptions: sc, osf
+fontsize: 11pt
+linkcolor: blue
+urlcolor: blue
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(magrittr) # For the pipe
+
+# Read in all data and initialize a CV printer object
+CV <- datadrivencv::create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/1bBlRkTPyPXkxHUzBo7H6xJm33vnP-qv0sJ5rI1eCRO4/edit?usp=sharing"
+)
+
+```
+
+```{r, education}
+CV %>% datadrivencv::print_section('education', regex_expression = '{title} at {institution} \\hfill {timeline}', title = '# Education')
+```
+
+```{r, articles}
+CV %>% datadrivencv::print_section('articles', regex_expression = '{title}, *{loc}*, {description_bullets} \\hfill {start}', title = '# Journal Articles')
+```
+
+```{r, working_papers}
+CV %>% datadrivencv::print_section('working_papers', regex_expression = '"{title}" {description_bullets} \\hfill {start}
+                                   
+                                   {abstract}', title = '# Working Papers')
+```
+
+```{r, ongoing_work}
+CV %>% datadrivencv::print_section('ongoing_work', regex_expression = '"{title}" {description_bullets}', title = '# Selected Work in Progress')
+```
+
+```{r, not_for_publishing}
+CV %>% datadrivencv::print_section('not_for_publishing', regex_expression = '"{title}", {loc}, {description_bullets} \\hfill {start}', title = '# Articles Not Intended for Publication')
+```
+
+```{r, other}
+CV %>% datadrivencv::print_section('other', regex_expression = '{title} at {institution} \\hfill {timeline}', title = '# Other Engagements')
+```
+
+```{r, seminars}
+CV %>% datadrivencv::print_section('seminar', regex_expression = '{title} \\hfill {start}', title = '# Presentations')
+```
+
+```{r, teaching}
+CV %>% datadrivencv::print_section('teaching', regex_expression = '{title} \\hfill {start}', title = '# Teaching \n## Teaching Assistant')
+```
+
+```{r, skills_data}
+CV %>% datadrivencv::print_section('data_science', regex_expression = '{title}', title = '# Skills \n## Data science')
+```
+
+```{r, skills_language}
+CV %>% datadrivencv::print_section('language', regex_expression = '{title}', title = '\\vspace{-0.3cm}## Languages')
+```
+
+```{r, references}
+CV %>% datadrivencv::print_section('references', regex_expression = '{title}', title = '# References')
+```
