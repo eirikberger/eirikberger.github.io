@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2RLHNT9DP"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-F2RLHNT9DP');
+	</script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.collapse').on('shown.bs.collapse', function() {
+                $('html, body').scrollTop($(this).offset().top - 20);
+            });
+        });
+    </script>
+    
+    <title>Eirik Berger Abel - Personal Website</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- JavaScript Bundle with Popper (Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+          
+    <div class="container">
+        <!-- Header Content -->
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="./main.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <span class="fs-4">Eirik Berger Abel</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="./main.html" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="./programs.html" class="nav-link">Programs</a></li>
+                <li class="nav-item"><a href="./docs/berger_abel_cv_2023.pdf" class="nav-link">CV</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container-lg">
+        <div class="row justify-content-between">
+            <!-- Sidebar Content -->
+            <div class="col-sm-3">
+                <img src="img/s12649.jpg" class="img-fluid" alt="Eirik Berger Abel">
+                <hr>
+                <div><a href="https://www.nhh.no/en/employees/faculty/eirik-berger/" target="_blank">University page</a></div>
+                <div><a href="https://twitter.com/eirikberger" target="_blank">Twitter</a></div>
+                <div><a href="https://github.com/eirikberger" target="_blank">Github</a></div>
+                <div><a href="./docs/berger_abel_cv_2023.pdf" target=_blank>CV</a></div>
+                <br>
+            </div>
+            
+            <!-- Main Body Content -->
+            <div class="col-sm-8">
+                <!-- About Me Section -->
+                <section>
+                    <h4>About me</h4>
+                    <p>I&rsquo;m a PhD Research Scholar at <strong>Norwegian School of Economics</strong> in Bergen and the labor economics section of the <strong>Centre for Experimental Research on Fairness, Inequality and Rationality</strong>.</p>
+
+                    <p>I do research in <strong>labor economics</strong> and <strong>economic history</strong> using modern register data and novel sources of individual-level data from the early 20th century to the present. I&rsquo;m particularly interested in the evolution of inequity and social mobility over time.</p>
+
+                    <p>I visited Stanford University from September 2021 to March 2022.</p>
+
+                    <p><b>Email:</b> eirik.berger@gmail.no</p>
+
+                </section>
+                
+                <!-- Papers & Research Section -->
+                <section><hr>
+                    <h4>Job market paper</h4>
+                    
+                <div class="grey-background">
+                    <p><b>Living the American Dream: How Norway Became a High-Mobility Country (link)</b></p>
+                        <div>Coming soon.</div>
+                </div>
+            
+                </section>
+                                
+                <!-- Example Section -->
+                <section><hr>
+                    <h4>In progress</h4>
+                    <div class="grey-background">
+                        <b>The Making of Equality: How the Second World War Shaped the Norwegian Income Distribution</b>
+                        <i>(with Ran Abramitzky and Kjell Gunnar Salvanes)</i>
+                        <p class="no-margin"><a role="button" data-bs-toggle="collapse" href="#abs1" aria-expanded="false" aria-controls="abs1">Abstract</a></p>
+                        <div class="collapse" id="abs1">
+                            Coming soon. 
+                        </div>
+                    </div>
+                    <div class="grey-background">
+                        <b>Fertility, Family Formation and Human Capital (link)</b>
+                        <i>(with Aline Butikofer and Kjell Gunnar Salvanes)</i>
+                        <p class="no-margin"><a role="button" data-bs-toggle="collapse" href="#abs2" aria-expanded="false" aria-controls="abs2">Abstract</a></p>
+                        <div class="collapse" id="abs2">
+                            By varying the intensity of compulsory schooling while keeping the number of compulsory school years constant, this paper generates new insights into the effect of human capital on fertility on the extensive and intensive margin. We leverage population-wide panel data for Norway in combination with a school reform in the 1930s changing the instruction time during the school year that allows us to isolate the effect of human capital investment on fertility behavior across the life-cycle from an incarceration effect. We present robust evidence of reduced total fertility driven mostly by an increase in the share of women with one or no children and an increase in the age at first birth by around four months.
+                        </div>
+                    </div>
+                    <div class="grey-background">
+                        <b>Norwegian Tax Returns from the 20th Century: An Automated Machine Learning Approach (pdf)</b>
+                        <i>(with Kjell Gunnar Salvanes)</i>
+                        <p class="no-margin"><a role="button" data-bs-toggle="collapse" href="#abs3" aria-expanded="false" aria-controls="abs3">Abstract</a></p>
+                        <div class="collapse" id="abs3">
+                            High-quality administrative tax data has been instrumental in advancing economic research over the past several decades. However, the scarcity of data prior to the 1970s has posed a significant obstacle to the study of the distribution of economic outcomes across people and generations in historical settings. We introduce a dataset extending Norwegian tax records to 1900 by meticulously digitizing more than 270,000 pages. The dataset includes most Norwegian regions and data on name, occupation, place of residence, earnings, and wealth. We link observations across years to significantly enhance the usefulness of the data. We argue that the methodologies employed in this paper offer significant potential for application to a wider range of sources and countries.
+                        </div>
+                    </div>
+                    <div class="grey-background">
+                        <b>Becoming Sweden: A 115 Year Journey Towards Wealth and Welfare</b>
+                        <i>(with Arash Nekoei and Josef Sigurdsson)</i>
+                        <p class="no-margin"><a role="button" data-bs-toggle="collapse" href="#abs4" aria-expanded="false" aria-controls="abs4">Abstract</a></p>
+                        <div class="collapse" id="abs4">
+                            Coming soon. 
+                        </div>
+                    </div>
+                </section>
+
+                <section><hr>
+                    <h4>Other work</h4>
+
+                    <div class="grey-background">
+                        <b>Equality before the welfare state: The Norwegian income distribution 1892-1929 (master thesis)</b>
+                        <i>(with Håkon Block Vagle)</i>
+                        <p class="no-margin"><a role="button" data-bs-toggle="collapse" href="#abs5" aria-expanded="false" aria-controls="abs5">Abstract</a></p>
+                        <div class="collapse" id="abs5">
+                            We estimate the complete income distribution in Norway for 1892, 1906, 1913 and 1929. Compared to previous research, we benefit from better data and more advanced estimation techniques. Our thesis identifies several data weaknesses which have caused bias in previous studies. Much of the data previously used does not distinguish between individual taxpayers and impersonal entities such as stock companies and banks. Another weakness is that before 1921, dividends were not included in the income data. For 1929, the data allows us to create local-level estimates for each Norwegian municipality. We find that the pre-tax, pre-transfers Gini index is stable for the years we analyse, starting at 52 percent in 1892 and ending at 54 percent in 1929. The top 1% income share before taxes and transfers falls over time, declining from 19 percent in 1892 to 12 percent in 1929. We find that shocks to wealth might play a role in this development. Our results differ significantly from those of previous studies. First, we find a Gini index lower than Aaberge, Atkinson and Modalsli (2016). Second, we find lower top incomes and a different development over time than Aaberge, Atkinson and Modalsli (2013). Our results suggest that Norway was already among the most egalitarian countries in Western Europe between 1892 and 1929 in terms of income. However, our estimates are sensitive to total income and to the estimation of stock dividends. Historical estimates from other countries are likely to be sensitive too, leaving a considerable risk of error when comparing.
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

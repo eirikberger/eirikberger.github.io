@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.collapse').on('shown.bs.collapse', function() {
+                $('html, body').scrollTop($(this).offset().top - 20);
+            });
+        });
+    </script>
+    
+    <title>Eirik Berger Abel - Personal Website</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2RLHNT9DP"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F2RLHNT9DP');
+    </script>
+
+</head>
+<body>
+    <!-- JavaScript Bundle with Popper (Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+          
+    <!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2RLHNT9DP"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-F2RLHNT9DP');
+	</script>
+
+    <div class="container">
+        <!-- Header Content -->
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="./main.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <span class="fs-4">Eirik Berger Abel</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="./main.html" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="./programs.html" class="nav-link active">Programs</a></li>
+                <li class="nav-item"><a href="./docs/cv.pdf" class="nav-link">CV</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container-lg">
+        <div class="row justify-content-between">
+            <!-- Sidebar Content -->
+            <div class="col-sm-3">
+                <img src="img/s12649.jpg" class="img-fluid" alt="Eirik Berger Abel">
+                <hr>
+                <div><a href="https://www.nhh.no/en/employees/faculty/eirik-berger/" target="_blank">University page</a></div>
+                <div><a href="https://twitter.com/eirikberger" target="_blank">Twitter</a></div>
+                <div><a href="https://github.com/eirikberger" target="_blank">Github</a></div>
+                <div><a href="./docs/cv.pdf" target=_blank>CV</a></div>
+                <br>
+            </div>
+            
+            <!-- Main Body Content -->
+            <div class="col-sm-8">
+                <!-- About Me Section -->
+                <section>
+                    <h4>Programs</h4>
+
+                    <p>Here are some packages that I have written.</p>
+
+                    <ul>
+                      <li><a href="https://github.com/eirikberger/hte"><strong>hte</strong></a> Python based package to segment images and to extract and structure text from historical documents. To install through pip run <code class="language-plaintext highlighter-rouge">pip install hte</code> or the newst version directly from the Github repository by running <code class="language-plaintext highlighter-rouge">pip install git+ssh://git@github.com/eirikberger/hte.git</code></li>
+                      <li><a href="https://github.com/eirikberger/hismatch"><strong>hismatch</strong></a> R package to link historical individual-level data. Optimized to run on many cores. Read the documentation <a href="https://eirikberger.github.io/hismatch/" target="_blank">here</a> or below. To install run <code class="language-plaintext highlighter-rouge">devtools::install_github("eirikberger/hismatch")</code></li>
+                      <li><a href="https://github.com/eirikberger/NoRwayGeo"><strong>NoRwayGeo</strong></a> This R based package is an attempt at dealing with historical Norwegian municipalities. First, the package uses a cleaned version of SSB’s overview of historical changes in the municipality structure to produce clusters of municipalities that can be followed consistently between two given years. Second, it provides functions and data to link current and historical municipalities (including different names and spellings) to a municipality number. To install run <code class="language-plaintext highlighter-rouge">devtools::install_github("eirikberger/NoRwayGeo")</code></li>
+                      <li><a href="https://github.com/eirikberger/datadrivencv"><strong>datadrivencv</strong></a>
+                        This R package is a rewritten version of
+                            <a href="https://github.com/nstrayer/datadrivencv" target="_blank">
+                                <code>{datadrivencv}</code>
+                            </a> by
+                            <a href="https://github.com/nstrayer" target="_blank">
+                                Nick Strayer
+                            </a> combined with the
+                            <a href="http://svmiller.com/blog/2016/03/svm-r-markdown-cv/" target="_blank">
+                                CV template
+                            </a> made by
+                            <a href="https://github.com/svmiller" target="_blank">
+                                Steven V. Miller
+                            </a> as part of the
+                            <a href="http://svmiller.com/stevetemplates/" target="_blank">
+                                <code>{stevetemplates}</code>
+                            </a> package. To install run <code class="language-plaintext highlighter-rouge">devtools::install_github("eirikberger/datadrivencv")</code>
+                        </li>
+                    </ul>   
+                    
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+</body>
+</html>

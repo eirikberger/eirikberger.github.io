@@ -1,0 +1,37 @@
+p.no-margin {
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+.collapse {
+    margin-top: 20px;
+    margin-bottom: 0px; /* Add space at the bottom */
+}
+
+header a {
+    color: #278aec; /* Dark grey color */
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #007bff; /* Bootstrap primary blue on hover */
+    text-decoration: none;
+}
+
+header svg {
+    fill: #007bff; /* Bootstrap primary blue */
+}
+
+.fs-4 {
+    font-weight: 700; /* Make font bold */
+    letter-spacing: 1px; /* Add spacing between letters for legibility */
+}
+
+.grey-background {
+    background-color: #eff2f7; /* Light grey background  #f0f0f0*/
+    padding: 15px; /* Some padding inside the div */
+    margin-bottom: 15px; /* Some margin to separate from subsequent content */
+}
+
+.no-margin {
+    margin-bottom: 0; /* Removing margin-bottom from the paragraph */
+}
