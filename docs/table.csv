@@ -1,0 +1,101 @@
+surname,firstname,income_raw,wealth_raw,occupation,residence,muni_number,year
+Uppstrøm,Håkon,14200,16000,fabrarb,Navestadv. 83 Sarpsborg,115,1961
+Kristiansen,Ingvald,28600,54000,malerm,T. Segerstedtsv. 1,1703,1953
+Kommedal,Torger,17000,0,anlarb,Vølstadv.,1103,1963
+Olsen,Ole Waldemar,0,15400,småbr,"",2012,1952
+Dahlen,Hans,6100,27000,småbr,Bjørgeseter,533,1959
+Stornes,Otto,11600,35000,småbr,Kjemåga,1840,1964
+Hekkile,Alfred,14500,30000,"","",2003,1966
+Knudsen,Oluf,600,0,småbr og fisker,Oldervik,1934,1934
+Andersen,Oloug,4300,39000,frue,Brumunddal,413,1951
+Hadeland,Marit,15600,10000,lærerinne,Äl,619,1956
+Vannes,R,2175,19000,notbas,Berge,1212,1934
+MM,Josef,3200,0,fyrb,Øvre Strandgt. 9,1501,1923
+Hodne,Signe,2000,16000,huseier,Festningsg. 32,1001,1949
+Appelgren,Karin,8200,0,fabrarb,Kjøkøy Trolldalen,133,1961
+Pedersen,Herm.,16830,34000,borgermester,"",1102,1922
+Wetlesen,Per,9000,50000,forp,Spro,216,1956
+Nilsen,Einar,13000,0,former,Jarlsøy,721,1954
+Heggeløkken,Oskar,11500,3000,arbeider,Hundorp,519,1958
+Thomassen,Asbjørn,4600,0,arbeider,Austadvegen,712,1952
+Honningsvaag,Anna,6000,0,arbeider,Stenvågv. 9,1501,1958
+Johansen,Oskar,5700,0,maler,Äbø,1135,1947
+Hjelm,Paul,10900,0,løsarb,M Sarsg. 12,1103,1959
+Svendsen,Sverre,1350,0,vegarb,Buvika,1656,1947
+Gauthun,Haavard,2300,0,arbeider,Øyra,1135,1942
+Løvold,Sverre,27000,0,"",Hernesv. 23,1804,1964
+Edvartsen,Asta,4200,0,"",Stangebrua,417,1965
+Svensli,Gunhild,6200,0,apotektekn,N. Halsetv. 44,1660,1962
+Bjørnstad,Kristian,5100,0,småkr,Stakkestad,801,1958
+Reinertsen,Arne,1125,2200,arbeider,Hevaker,1018,1938
+Fløtterud,Levor A.,3650,8000,skogsarb,Djupdal,632,1956
+Akselsen,Fridtjof,2600,0,agronom,Haraldstad Hamar,414,1945
+Dahl,Johan,11500,0,anlarb,Engdal,1569,1952
+Mariussen,Andreas,3800,3500,maler,Sandnes,1821,1946
+Pedersen,Gudrun,6800,0,vaskehj,Våer 5,826,1957
+Norvile,Ole,5000,19400,poståpner og gbr,"",1538,1938
+Tjørn,Marie,2000,8000,friserd,Christiesg. 11,1301,1940
+Veske,Torfinn,31200,15000,lærer,Levanger,1719,1957
+Gundersen,Geong J.,11700,1373,blikkensl,Arendal,903,1958
+Østensen,Rudolf,600,4700,gbr,Høidal,1868,1936
+Strømme,Jørgen,1700,6000,gbr,Vågstranda,1541,1954
+Garshol,Peter C,1650,4500,møller,"",1516,1930
+Rostad,Leif,22200,49000,bakerm,Orkanger,1639,1960
+Frank,Nils,5400,0,form,Ø. Storgt. 8,602,1938
+Holm,Ingjerd,14000,0,fabrarb,S Skaldsv. 6,104,1961
+Evensen,Thor Peder,7900,0,læregutt,Tofte,628,1956
+Gjære,Einar,4450,37200,gbr,Sjøholt,1527,1954
+Vaage,Ole Bruntvet,1470,6000,eksped,"",1223,1924
+Olsen,Johan,1500,3500,gbr,Vesterli,1842,1930
+Solhøi,Kristian,2650,7500,garveriarb,Brumunddal,413,1945
+Hagen,Marius,600,0,arbeider,Våler i Solør,426,1933
+Askvik,L 0,8330,21000,forv og landh og bakeri,"",1243,1942
+André,John E,3600,0,snekker,"",1805,1932
+Støen,Ole,4100,36000,gbr,Refsalen,816,1957
+Finseth,Ludvig,1000,5000,renten,Stamnes,1821,1930
+Rørstad,Odd,16900,35000,gbr,Bjørke,1520,1964
+Ersdal,Harald,19300,0,"",Svalev. 3,1001,1964
+Lund,Gustav,350,1800,småbr,Leksdalen,1721,1927
+Tveit,Jorunn,3600,16000,hushj,Erfjord,1134,1963
+Gundersen,Gunvor,7100,0,butikkd,Skolegt. 8 b,1703,1953
+Trovik,Sturle,24000,0,"",Lyngbøv. 81 Laksevåg,1248,1967
+Berg,Oskar,8600,0,kokk,Surnadal,1566,1953
+Markussen,Olaf,9900,13000,pens,Grovfjord,1913,1964
+Nikolaisen,Gotfred,5700,100,fisker,Alstad,1860,1962
+Lunde,Ommund,19900,80000,pens,Hjelmel.g. 97,1103,1961
+Coucheron,Sværre,3000,1300,fisker løsarb,"",1916,1946
+Saltnes,Lars,1675,0,møllearb,Buvik,1656,1931
+Rønning,Sigurd,13800,0,arbeider,Steinvik,430,1960
+Eliassen,Elias,8400,0,fabrarb og x,"",726,1954
+Øvre,Odveig,19900,6000,"",Sykehuset Nordbyhagen,230,1964
+Golverdingen,Wilhelm,7900,0,reisende,Borgebo,712,1952
+Alrek,Olav,2200,8400,gbr,"",1417,1945
+Austvoll,Ivar Østvold,2450,9300,gbr,"",1123,1924
+Fjeldskår,August E,9100,19000,pens,Lindesnes,1030,1959
+Gustavson,Gustav Hj.,3550,0,kommarb,H Wergel.g. 47,1001,1934
+Honningsvaag,Olaf O Bech,1000,0,arbeider,"",2019,1925
+Karstensen,Oddvar,20100,0,"",Åsvang,417,1963
+Hansen,Rolf,5900,0,tekstilarb,Asheim,116,1946
+Halle,Margrete O.,1300,8000,hushj,Todalen,1564,1956
+Ålgård,Kr. Ingebrethsen,2675,0,stasjonsm,"",1122,1928
+Skadberg,Jens Jensen,3908,16000,gbr,"",1124,1926
+Gundersen,Osvald,4800,0,arbeider,Ilen,812,1947
+Bretvik,Arvid,9600,0,sjåfør,Bergheim,712,1952
+Høyden,Anders,2875,0,husm,Sander,419,1945
+Romseland,Ingvald,21700,10000,"",Bergåsv. 7 StavangerHillevåg,1103,1967
+Kyvik,Mandius,17600,42000,pens,Leirvik Stord,1221,1960
+Simonsen,Johanne L,3400,69000,"",Konsul Børsg. 32,1301,1942
+Knudsen,Bjørg,8100,0,kontord,Konnerudg. 25,602,1960
+Bergem,Audin P,2080,16500,gbr,"",1560,1930
+Søgård,Ragnvald,7325,0,arbeider,Namnå,423,1951
+Stende,Berit,425,400,småbr,Øye,545,1941
+Tetliaune,Severin,5400,0,snekker,Stadsbygd,1625,1960
+Tøgersen,Jørgen,2550,0,sagarb,Lågerøen,725,1939
+Kvalsnes,Halfrid,2600,0,arbeider,Aureosen,1548,1959
+Guttormsen,Erling,16680,0,fullm,Hokksund,624,1954
+Enoksen,Ranveig,15500,0,"",Skarv. 40 b,1901,1966
+Urdal,Nils T,900,2000,gbr,Urdal,1155,1931
+Bakkan,Arwid,725,0,snekker,Verdal,1721,1939
+Stillingen,Petra,3900,0,husmor,Vikersund,623,1948
+Lein,Ella,4300,0,"",Rinnan,1721,1959
+Johansen,Karl,1090,5300,småbr,Finnland,1926,1930

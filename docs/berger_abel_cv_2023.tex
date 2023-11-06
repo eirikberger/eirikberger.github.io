@@ -1,0 +1,343 @@
+% CV ----
+% This is just here so I know exactly what I'm looking at in Rstudio when messing with stuff.
+\documentclass[11pt,]{article}
+\usepackage[sc, osf]{mathpazo}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+
+
+
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\usepackage{hyperref}
+\usepackage{array}
+
+% Now begins the stuff that I added.
+% ----------------------------------
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\large\bf}
+\subsectionfont{\rmfamily\mdseries\normalsize\scshape}
+
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+
+% Make parskips rather than indent with lists.
+\usepackage{parskip}
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+% Use fontawesome. Note: you'll need TeXLive 2015. Update.
+\usepackage{fontawesome}
+
+% Fancyhdr, as I tend to do with these personal documents.
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\scriptsize  Eirik Berger Abel - CV}
+\rfoot{\scriptsize \thepage/{\hypersetup{linkcolor=black}\pageref{LastPage}}}
+
+% Always load hyperref last.
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+
+\hypersetup{unicode=true,
+            pdftitle={Eirik Berger Abel:  CV (Curriculum Vitae)},
+            pdfauthor={Eirik Berger Abel},
+            pdfkeywords={R Markdown, academic CV, template},
+            colorlinks=true,
+            linkcolor=blue,
+            citecolor=blue,
+            urlcolor=blue,
+            breaklinks=true, bookmarks=true}
+\urlstyle{same}  % don't use monospace font for urls
+
+% Make AP style (kinda) dates for the updated/today field
+
+\usepackage{datetime}
+\newdateformat{apstylekinda}{%
+  \shortmonthname[\THEMONTH]. \THEDAY, \THEYEAR}
+
+% \emph{Updated:} \apstylekinda\today
+% ^ removed from that front bar.
+
+\usepackage{orcidlink}
+%\usepackage{academicons}
+%\definecolor{orcidlogocol}{HTML}{A6CE39}
+% \newcommand{\orcid}[1]{\href{https://orcid.org/#1}{\textcolor[HTML]{A6CE39}{\aiOrcid}}}
+
+\begin{document}
+
+
+\centerline{\huge \bf Eirik Berger Abel}
+
+\vspace{2 mm}
+
+\hrule
+
+\vspace{2 mm}
+
+\moveleft.5\hoffset\centerline{PhD Research Scholar \textbar{} Norwegian
+School of Economics}
+
+\moveleft.5\hoffset\centerline{ \faEnvelopeO \hspace{1 mm} \href{mailto:}{\tt \href{mailto:eirik.berger@gmail.com}{\nolinkurl{eirik.berger@gmail.com}}} \hspace{1 mm}  \faPhone \hspace{1 mm}  +47
+954 61 029  \hspace{1 mm}         | \emph{Updated:} 06 Nov 2023}
+
+
+
+\vspace{2 mm}
+
+\hrule
+
+
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+PhD in Economics at Norwegian School of Economics (NHH) \hfill 2018 -
+ongoing\vspace{-0.2cm}
+
+M.Sc in Business and Administration at Norwegian School of Economics
+(NHH) \hfill 2016 - 2018\vspace{-0.2cm}
+
+Bachelor in Business and Administration at Norwegian School of Economics
+(NHH) \hfill 2012 - 2015\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\hypertarget{visiting-activities}{%
+\section{Visiting Activities}\label{visiting-activities}}
+
+Visiting student researcher at Stanford University (visiting Ran
+Abramitzky) \hfill 2021 - 2022\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\hypertarget{research-fields}{%
+\section{Research Fields}\label{research-fields}}
+
+\vspace{-1mm}
+\begin{tabular}{p{.85in}>{\hangindent=1em}p{5.65in}<{\raggedright}}
+Primary:   & Labor Economics and Applied Microeconomics\\
+Secondary: & Economic History\\
+\end{tabular}
+\vspace{-1mm}
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\begin{tabular}{p{2.15in}>{\hangindent=1em}p{2.15in}>{\hangindent=1em}p{2.15in}<{\raggedright}}
+\textbf{Prof. Kjell Gunnar Salvanes}   & \textbf{Prof. Aline Bütikofer} &  \textbf{Prof. Ran Abramitzky}\\
+Norwegian School of Economics & Norwegian School of Economics & Stanford University\\
+\href{mailto:Kjell.Salvanes@nhh.no}{Kjell.Salvanes@nhh.no} \vspace{2mm} & \href{mailto:Aline.Buetikofer@nhh.no}{Aline.Buetikofer@nhh.no} \vspace{2mm} & \href{mailto:RanAbr@stanford.edu}{RanAbr@stanford.edu}\\
+\end{tabular}
+
+\hypertarget{working-papers}{%
+\section{Working Papers}\label{working-papers}}
+
+``\textbf{Living the American Dream: How Norway Became a High-Mobility
+Country'' (JMP) \hfill 2023}
+
+Coming soon.\vspace{0.3cm}\vspace{-0.2cm}
+
+``\textbf{Fertility, Family Formation and Human Capital'' with Aline
+Bütikofer and Kjell G. Salvanes \hfill 2023}
+
+By varying the intensity of compulsory schooling while keeping the
+number of compulsory school years constant, this paper generates new
+insights into the effect of human capital on fertility on the extensive
+and intensive margin. We leverage population-wide panel data for Norway
+in combination with a school reform in the 1930s changing the
+instruction time during the school year that allows us to isolate the
+effect of human capital investment on fertility behavior across the
+life-cycle from an incarceration effect. We present robust evidence of
+reduced total fertility driven mostly by an increase in the share of
+women with one or no children and an increase in the age at first birth
+by around four months.\vspace{0.3cm}\vspace{-0.2cm}
+
+``\textbf{The Making of Equality: How the Second World War Shaped the
+Norwegian Income Distributions'' with Ran Abramitzky and Kjell G.
+Salvanes \hfill 2023}
+
+Coming soon.\vspace{0.3cm}\vspace{-0.2cm}
+
+``\textbf{Norwegian Tax Returns from the 20th Century: An Automated
+Machine Learning Approach'' with Kjell G. Salvanes \hfill 2023}
+
+High-quality administrative tax data has been instrumental in advancing
+economic research over the past several decades. However, the scarcity
+of data prior to the 1970s has posed a significant obstacle to the study
+of the distribution of economic outcomes across people and generations
+in historical settings. We introduce a dataset extending Norwegian tax
+records to 1900 by meticulously digitizing more than 270,000 pages. The
+dataset includes most Norwegian regions and data on name, occupation,
+place of residence, earnings, and wealth. We link observations across
+years to significantly enhance the usefulness of the data. We argue that
+the methodologies employed in this paper offer significant potential for
+application to a wider range of sources and
+countries.\vspace{0.3cm}\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\hypertarget{selected-work-in-progress}{%
+\section{Selected Work in Progress}\label{selected-work-in-progress}}
+
+``Becoming Sweden: A 115 Year Journey Towards Wealth and Welfare'' with
+Josef Sigurdsson and Arash Nekoei\vspace{-0.2cm}
+
+``The Long-Run Effect of Industrialization on Health and Mortality''
+with Rene Karadakic\vspace{-0.2cm}
+
+``Two Centuries of Norwegian Newspapers'' with Jaime Marques
+Pereira\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\hypertarget{articles-not-intended-for-publication}{%
+\section{Articles Not Intended for
+Publication}\label{articles-not-intended-for-publication}}
+
+``Equality before the welfare state: The Norwegian income distribution
+1892-1929'', Master Thesis, with Håkon Block Vagle
+\hfill 2017\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\hypertarget{other-engagements}{%
+\section{Other Engagements}\label{other-engagements}}
+
+Journalist at Dagens Næringsliv (financial newspaper) \hfill 2016, 2017
+(summer)\vspace{-0.2cm}
+
+Board member at Department of Economics at NHH \hfill 2015, 2017,
+2021\vspace{-0.2cm}
+
+Journalist at Finansavisen (financial newspaper) \hfill 2014
+(summer)\vspace{-0.2cm}
+
+Board member at Norwegian School of Economics (NHH) \hfill 2016 -
+2017\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\hypertarget{presentations}{%
+\section{Presentations}\label{presentations}}
+
+SOLE, EALE, Stanford University (internal), NHH (internal), Uppsala
+University \hfill 2021\vspace{-0.2cm}
+
+NHH (internal), University of Southern Denmark (HEDGE mini-workshop),
+the Scandinavian (online) PhD Seminar \hfill 2020\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\hypertarget{refereeing}{%
+\section{Refereeing}\label{refereeing}}
+
+Journal of Human Resources\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\hypertarget{teaching-and-research-assistance}{%
+\section{Teaching and Research
+Assistance}\label{teaching-and-research-assistance}}
+
+\hypertarget{teaching-assistant}{%
+\subsection{Teaching Assistant}\label{teaching-assistant}}
+
+Inequality, Intergenerational Mobility and Early Childhood. Ph.D level
+at UiB. \hfill 2021\vspace{-0.2cm}
+
+Econometrics/Econometric Techniques (\emph{ECN402}). Master level at NHH
+\hfill 2020 (2x), 2021\vspace{-0.2cm}
+
+Krakk og Kriser (the History of Business Cycles, \emph{FIE431}). Master
+level at NHH \hfill 2019, 2023\vspace{-0.2cm}
+
+Empirical Strategies for Causal Analysis (\emph{ECO433}). Masters level
+at NHH \hfill 2019\vspace{-0.2cm}
+
+Økonomi og Psykologi (Behavioural Economics, \emph{VOA40}). Bachelor
+level at NHH \hfill 2016\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\hypertarget{research-assistant}{%
+\subsection{Research Assistant}\label{research-assistant}}
+
+Prof.~Katrine Løken \hfill 2017\vspace{-0.2cm}
+
+Prof.~Alexander Cappelen and Bertil Tungodden \hfill 2016\vspace{-0.2cm}
+
+Prof.~Kjell Gunnar Salvanes \hfill 2017-2023\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\hypertarget{skills}{%
+\section{Skills}\label{skills}}
+
+\hypertarget{data-science}{%
+\subsection{Data science}\label{data-science}}
+
+R (advanced), Stata (advanced), Python (advanced), Bash (proficient) and
+Git (proficient)\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\vspace{-0.3cm}
+
+\hypertarget{languages}{%
+\subsection{Languages}\label{languages}}
+
+Norwegian and English\vspace{-0.2cm}
+
+\vspace{0.5cm}
+
+\end{document}

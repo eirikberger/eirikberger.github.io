@@ -1,5 +1,12 @@
 ---
-output: datadrivencv::cv
+output: 
+  datadrivencv::cv:
+    keep_tex: yes
+
+header-includes:
+- "\\usepackage{hyperref}"
+- "\\usepackage{array}" # for the table format
+  
 geometry: margin=1in
 
 title: "CV"
@@ -40,23 +47,64 @@ CV <- datadrivencv::create_CV_object(
 
 ```
 
+
+<!-- \textbf{Placement Director:} -->
+<!-- Katrine V. L\o ken | -->
+<!-- \textit{Phone:} +47 416 615 91 | -->
+<!-- \textit{E-mail:} \href{mailto:katrine.loken@nhh.no}{katrine.loken@nhh.no} -->
+
+<!-- \vspace{2mm} -->
+<!-- \hrule -->
+<!-- \vspace{2mm} -->
+
+
 ```{r, education}
 CV %>% datadrivencv::print_section('education', regex_expression = '{title} at {institution} \\hfill {timeline}', title = '# Education')
 ```
+
+```{r, visits}
+CV %>% datadrivencv::print_section('visits', regex_expression = '{title} at {institution} ({description_bullets}) \\hfill {timeline}', title = '# Visiting Activities')
+```
+
+# Research Fields
+
+\vspace{-1mm}
+\begin{tabular}{p{.85in}>{\hangindent=1em}p{5.65in}<{\raggedright}}
+Primary:   & Labor Economics and Applied Microeconomics\\
+Secondary: & Economic History\\
+\end{tabular}
+\vspace{-1mm}
+
+# References
+
+\begin{tabular}{p{2.15in}>{\hangindent=1em}p{2.15in}>{\hangindent=1em}p{2.15in}<{\raggedright}}
+\textbf{Prof. Kjell Gunnar Salvanes}   & \textbf{Prof. Aline Bütikofer} &  \textbf{Prof. Ran Abramitzky}\\
+Norwegian School of Economics & Norwegian School of Economics & Stanford University\\
+\href{mailto:Kjell.Salvanes@nhh.no}{Kjell.Salvanes@nhh.no} \vspace{2mm} & \href{mailto:Aline.Buetikofer@nhh.no}{Aline.Buetikofer@nhh.no} \vspace{2mm} & \href{mailto:RanAbr@stanford.edu}{RanAbr@stanford.edu}\\
+\end{tabular}
+
+<!-- # Placement Director -->
+
+<!-- \begin{tabular}{p{2.15in}>{\hangindent=1em}p{2.15in}>{\hangindent=1em}p{2.15in}<{\raggedright}} -->
+<!-- \textbf{Prof. Katrine V. L\o ken}\\ -->
+<!-- Norwegian School of Economics\\ -->
+<!-- \href{mailto:Katrine.Loken@nhh.no}{Katrine.Loken@nhh.no}\\ -->
+<!-- \end{tabular} -->
+
 
 ```{r, articles}
 CV %>% datadrivencv::print_section('articles', regex_expression = '{title}, *{loc}*, {description_bullets} \\hfill {start}', title = '# Journal Articles')
 ```
 
-<!-- # ```{r, working_papers} -->
-<!-- # CV %>% datadrivencv::print_section('working_papers', regex_expression = '"{title}" {description_bullets} \\hfill {start} -->
-<!-- #                                     -->
-<!-- #                                    {abstract}', title = '# Working Papers') -->
-<!-- # ``` -->
-
 ```{r, working_papers}
-CV %>% datadrivencv::print_section('working_papers', regex_expression = '"{title}" {description_bullets} \\hfill {start}', title = '# Working Papers')
+CV %>% datadrivencv::print_section('working_papers', regex_expression = '"**{title}" {description_bullets} \\hfill {start}**
+
+                                                                       {abstract}', title = '# Working Papers')
 ```
+
+<!-- # ```{r, working_papers} -->
+<!-- # CV %>% datadrivencv::print_section('working_papers', regex_expression = '"{title}" {description_bullets} \\hfill {start}', title = '# Working Papers') -->
+<!-- # ``` -->
 
 ```{r, ongoing_work}
 CV %>% datadrivencv::print_section('ongoing_work', regex_expression = '"{title}" {description_bullets}', title = '# Selected Work in Progress')
@@ -74,8 +122,16 @@ CV %>% datadrivencv::print_section('other', regex_expression = '{title} at {inst
 CV %>% datadrivencv::print_section('seminar', regex_expression = '{title} \\hfill {start}', title = '# Presentations')
 ```
 
+```{r, proff}
+CV %>% datadrivencv::print_section('proff', regex_expression = '{title}', title = '# Refereeing')
+```
+
 ```{r, teaching}
-CV %>% datadrivencv::print_section('teaching', regex_expression = '{title} \\hfill {start}', title = '# Teaching \n## Teaching Assistant')
+CV %>% datadrivencv::print_section('teaching', regex_expression = '{title} \\hfill {start}', title = '# Teaching and Research Assistance \n## Teaching Assistant')
+```
+
+```{r, RA}
+CV %>% datadrivencv::print_section('RA', regex_expression = '{title} \\hfill {end}', title = '## Research Assistant')
 ```
 
 ```{r, skills_data}
@@ -86,6 +142,4 @@ CV %>% datadrivencv::print_section('data_science', regex_expression = '{title}',
 CV %>% datadrivencv::print_section('language', regex_expression = '{title}', title = '\\vspace{-0.3cm}## Languages')
 ```
 
-```{r, references}
-CV %>% datadrivencv::print_section('references', regex_expression = '{title}', title = '# References')
-```
+

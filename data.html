@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2RLHNT9DP"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-F2RLHNT9DP');
+	</script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.collapse').on('shown.bs.collapse', function() {
+                $('html, body').scrollTop($(this).offset().top - 20);
+            });
+        });
+    </script>
+
+    <!-- Datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+
+    
+    <title>Eirik Berger Abel - Personal Website</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- JavaScript Bundle with Popper (Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+    <div class="container">
+        <!-- Header Content -->
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="./index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <span class="fs-4">Eirik Berger Abel</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="./index.html" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="./programs.html" class="nav-link">Programs</a></li>
+                <li class="nav-item"><a href="./docs/berger_abel_cv_2023.pdf" class="nav-link">CV</a></li>
+            </ul>
+        </header>
+    </div>
+
+     <!-- Main Content -->
+     <div class="container-lg">
+        <div class="row justify-content-between">
+            <!-- Sidebar Content -->
+            <div class="col-sm-3">
+                <img src="img/s12649.jpg" class="img-fluid" alt="Eirik Berger Abel">
+                <hr>
+                <div><a href="https://www.nhh.no/en/employees/faculty/eirik-berger/" target="_blank">University page</a></div>
+                <div><a href="https://twitter.com/eirikberger" target="_blank">Twitter</a></div>
+                <div><a href="https://github.com/eirikberger" target="_blank">Github</a></div>
+                <div><a href="./docs/berger_abel_cv_2023.pdf" target=_blank>CV</a></div>
+                <br>
+            </div>
+
+        <!-- Main Body Content -->
+        <div class="col-sm-8">
+
+            <h1>Random sample from the historical tax register</h1>
+
+            <table id="csv-table" class="display" style="width:100%">
+                <thead>
+                    <!-- Headers will be inserted by DataTables -->
+                </thead>
+                <tbody>
+                    <!-- Data will be inserted by DataTables -->
+                </tbody>
+            </table>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+            <script src="script.js"></script>
+        </div>
+    </div>
+<p></p>
+</div>
+</body>
+</html>
