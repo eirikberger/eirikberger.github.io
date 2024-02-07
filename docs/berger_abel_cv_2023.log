@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.21)  12 NOV 2023 16:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.21)  7 FEB 2024 10:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -892,11 +892,11 @@ Package microtype Info: Character `029' is missing
 (microtype)             Ignoring protrusion settings for this character.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 323.
+(hyperref)                be the same. Added a new anchor on input line 348.
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 357.
+(hyperref)                be the same. Added a new anchor on input line 382.
 
 [3] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -905,11 +905,11 @@ Package rerunfilecheck Info: File `berger_abel_cv_2023.out' has not changed.
 (rerunfilecheck)             Checksum: 3DE354C2A7C444E4DF0B2FDC1D56504F;2376.
  ) 
 Here is how much of TeX's memory you used:
- 26901 strings out of 476025
- 489060 string characters out of 5764574
- 1867388 words of memory out of 5000000
+ 26931 strings out of 476025
+ 489315 string characters out of 5764574
+ 1868388 words of memory out of 5000000
  46634 multiletter control sequences out of 15000+600000
- 557242 words of font info for 211 fonts, out of 8000000 for 9000
+ 558928 words of font info for 235 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,11n,118p,1208b,499s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb>
@@ -919,7 +919,7 @@ t/fonts/type1/public/fpl/fplrij8a.pfb></opt/texlive/2023/texmf-dist/fonts/type1
 /public/cm-super/sftt1095.pfb></opt/texlive/2023/texmf-dist/fonts/type1/urw/pal
 atino/uplb8a.pfb></opt/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.
 pfb></opt/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on berger_abel_cv_2023.pdf (3 pages, 140320 bytes).
+Output written on berger_abel_cv_2023.pdf (3 pages, 141772 bytes).
 PDF statistics:
  156 PDF objects out of 1000 (max. 8388607)
  133 compressed objects within 2 object streams
